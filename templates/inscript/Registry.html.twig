@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %} 
+{% form_theme inscript 'bootstrap_4_layout.html.twig' %}
+{% block title %} Inscription {% endblock %} 
+{% block body %} 
+{{form_start(inscript)}}
+    <h1>Inscription</h1>
+    {% for error in errors %}
+    <li>{{ error.message }}</li>
+    {% endfor %} 
+    {{form_row(inscript.Nom,{'attr':{'placeholder':'Nom'}})}} 
+    {{form_row(inscript.Prenom,{'attr':{'placeholder':'Prénom'}})}} 
+    {{form_row(inscript.Mail,{'attr':{'placeholder':'Email'}})}} 
+    {{form_row(inscript.Password,{'attr':{'placeholder':'Motde passe'}})}}
+    {#{{form_row(inscript.Test_Password,{'attr':{'placeholder':'Confirmer le mot de passe'}})}} #}
+    {{form_row(inscript.Adresse,{'attr':{'placeholder':'Adresse'}})}} 
+    {{form_row(inscript.Profession,{'attr':{'placeholder':'Profession'}})}}
+    {{form_row(inscript.UrlWeb,{'attr':{'required':'false','placeholder':'Url de votre site web'}})}}
+
+    <!-- <button type="button" class="btn btn-secondary" data-placement="left">Annuler</button> -->
+    <button type="submit" class="btn btn-success" data-placement="top">Soumettre</button>
+    <br>
+    <br>
+    <a id="retrolien1" href="#">{{ lien1 }}</a><br>
+    <a id="retrolien2" href="#">{{ lien2 }}</a> <br>
+{{form_end(inscript)}} 
+{% endblock %}
